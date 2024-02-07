@@ -2,11 +2,14 @@ number = 10
 print("I'm thinking of a number...")
 number = str(number)
 
+guess = input("What number am I thinking of? ")
+
 while 1:
-    guess = input("What number am I thinking of? ")
-    
     if guess != number:
-        guess = input("Sorry! Try again: ")
+        if guess < number:
+            guess = input("Sorry, your guess was lower than the number. Try again: ")
+        else:
+            guess = input("Sorry, your guess was higher than the number. Try again: ")
     
     if guess == 'q':
         print(f"The correct number was {number}")
