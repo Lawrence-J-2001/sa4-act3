@@ -5,12 +5,13 @@ number = str(number)
 num_guesses = int(input("How many guesses allowed? "))
 guess = input("What number am I thinking of? ")
 
-while num_guesses >= 1:
 
-    num_guesses = num_guesses - 1
-
+while 1:
     if guess != number:
-        guess = input(f"Wrong guess, you have {num_guesses} attempt(s) remaining; try again: ")
+        if guess < number:
+            guess = input("Sorry, your guess was lower than the number. Try again: ")
+        else:
+            guess = input("Sorry, your guess was higher than the number. Try again: ")
     
     if guess == 'q':
         print(f"The correct number was {number}")
